@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(cd \"C:/Users/fasol/Together_FE\" && mkdir -p docs/wireframes && ls -la docs && echo \"--- 경로 ---\" && pwd)",
+      "Bash(npm install *)",
+      "Bash(rm -f src/pages/LoginPage.tsx src/pages/ChallengeListPage.tsx)",
+      "Bash(npm run *)",
+      "Bash(rm -rf dist)",
+      "Bash(npx prettier *)",
+      "Bash(npx oxlint *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(rm -v src/mocks/fixtures.ts)",
+      "Bash(rmdir src/mocks)",
+      "Bash(echo \"\\(exit $?\\)\")",
+      "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\(JSON.stringify\\({...p.dependencies,...p.devDependencies},null,1\\)\\)\")",
+      "Bash(npm i *)",
+      "Bash(echo \"\\(lint exit $?\\)\")",
+      "Bash(sed -i \"s|^import type {|import { REJECT_REASON_LABEL } from '@/lib/missionLog'\\\\nimport type {|\" src/components/domain/StatusStamp.tsx)",
+      "Bash(sed -i \"s|import { REJECT_REASON_LABEL } from '@/components/domain/StatusStamp'|import { REJECT_REASON_LABEL } from '@/lib/missionLog'|\" src/components/domain/DisputePanel.tsx)",
+      "Bash(node extract.js)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\fasol\\Together_FE\\docs"
+    ]
+  }
+}

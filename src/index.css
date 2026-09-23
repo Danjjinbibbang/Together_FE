@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+/*
+ * 가변 폰트 + 동적 서브셋. static 번들은 9개 웨이트를 통째로 받아 ~20MB가 되는 반면,
+ * 이건 unicode-range로 쪼개져 있어 실제로 쓰인 글자가 든 조각만 내려받는다.
+ */
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+
+/*
+ * 디자인 토큰 — Notion 와이어프레임 ver3의 :root 변수를 그대로 옮긴 것.
+ * Tailwind v4는 CSS-first 설정이라 여기 정의한 값이 곧 유틸리티가 된다.
+ * (--color-primary → bg-primary / text-primary / border-primary)
+ */
+@theme {
+  /* 배경 · 표면 */
+  --color-bg: #f4f8fc;
+  --color-surface: #ffffff;
+  --color-border: #e1e8ef;
+
+  /* 텍스트 */
+  --color-ink: #1c2733;
+  --color-muted: #7c8794;
+
+  /* 브랜드 */
+  --color-primary: #18a8f1;
+  --color-primary-dark: #0e74ad;
+  --color-primary-tint: #eaf6ff;
+
+  /* 포인트(노랑) */
+  --color-accent: #ffbe0f;
+  --color-accent-tint: #fff8e6;
+  --color-accent-tint-2: #fbf3e4;
+  --color-accent-ink: #8a5a0e;
+  --color-accent-ink-strong: #5c3d00;
+
+  /* 상태 */
+  --color-danger: #e5484d;
+  --color-danger-tint: #fdebec;
+  --color-success: #1f8a4c;
+  --color-success-tint: #eaf9ef;
+
+  /* AI 판정 전용 (화면 12·14 뱃지) */
+  --color-ai: #7c3aed;
+  --color-ai-tint: #f1edfe;
+
+  /* 기타 */
+  --color-track: #eaf0f5;
+  --color-toast: #232c36;
+
+  --font-sans:
+    'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    /* WebView에서 바운스 스크롤/탭 하이라이트로 인한 어색함 방지 */
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* 와이어프레임이 모두 버튼 기본 스타일을 지운 상태를 전제로 그려져 있다 */
+  button {
+    @apply cursor-pointer bg-transparent text-left;
+    font: inherit;
+    color: inherit;
+  }
+}
+
+/* Capacitor로 래핑했을 때 노치/홈 인디케이터 영역을 피하기 위한 유틸 */
+@utility safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+@utility safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 하단 고정 바 위로 컨텐츠가 가려지지 않도록 하는 스크롤 영역 */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
