@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>13. 계좌 상세</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.topbar{display:flex;align-items:center;gap:12px;padding:28px 20px 4px;position:relative;}
+.back{width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);border:1px solid var(--border);}
+.topbar h1{font-size:16px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:14px 20px 30px;}
+.balance-hero{background:linear-gradient(135deg,var(--primary),#0E74AD);border-radius:22px;padding:22px;color:#fff;margin-bottom:16px;}
+.balance-hero .label{font-size:12px;opacity:.85;}
+.balance-hero .amt{font-size:26px;font-weight:800;margin:6px 0 12px;}
+.bar{height:8px;background:rgba(255,255,255,.25);border-radius:999px;overflow:hidden;}
+.bar-fill{height:100%;width:38%;background:var(--accent);}
+.section-label{font-size:13px;font-weight:800;color:var(--ink);margin:20px 0 10px;}
+.tx{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
+.tx-icon{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.tx-icon.reward{background:#FFF8E6;}
+.tx-icon.reversal{background:#FDEBEC;}
+.tx-info{flex:1;}
+.tx-info .t{font-size:13px;font-weight:700;color:var(--ink);}
+.tx-info .d{font-size:11px;color:var(--muted);margin-top:2px;}
+.tx-amt{font-size:14px;font-weight:800;}
+.tx-amt.plus{color:var(--primary-dark);}
+.tx-amt.minus{color:var(--danger);}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="back">‹</div><h1>내 계좌</h1></div>
+  <div class="content">
+    <div class="balance-hero">
+      <div class="label">현재 잔액</div>
+      <div class="amt">49,400원</div>
+      <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+    <div class="section-label">입금 히스토리</div>
+    <div class="tx"><div class="tx-icon reward">🪙</div><div class="tx-info"><div class="t">오늘 감사한 점 3가지 적기</div><div class="d">8/19 · 미션 보상</div></div><div class="tx-amt plus">+1,200원</div></div>
+    <div class="tx"><div class="tx-icon reversal">↩️</div><div class="tx-info"><div class="t">이의제기 재판정 · 원거래 취소</div><div class="d">8/18 · 회수</div></div><div class="tx-amt minus">-3,400원</div></div>
+    <div class="tx"><div class="tx-icon reward">🪙</div><div class="tx-info"><div class="t">이의제기 재판정 · 재지급</div><div class="d">8/18 · 재지급</div></div><div class="tx-amt plus">+3,400원</div></div>
+    <div class="tx"><div class="tx-icon reward">🪙</div><div class="tx-info"><div class="t">오늘의 운동 인증샷 남기기</div><div class="d">8/17 · 미션 보상</div></div><div class="tx-amt plus">+3,400원</div></div>
+  </div>
+</div>
+</body></html>

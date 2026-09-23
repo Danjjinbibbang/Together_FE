@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>05. 챌린지 생성</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.topbar{display:flex;align-items:center;gap:12px;padding:28px 20px 18px;position:relative;}
+.back{width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);border:1px solid var(--border);}
+.topbar h1{font-size:17px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:4px 20px 120px;}
+.field{margin-bottom:20px;}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:8px;}
+.field input{width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--border);background:var(--surface);font-size:15px;color:var(--ink);font-weight:600;}
+.field input::placeholder{color:#B7C0C9;font-weight:500;}
+.date-row{display:flex;gap:10px;}
+.date-row input{text-align:center;}
+.preview-coin{background:#FFF8E6;border:1px dashed var(--accent);border-radius:14px;padding:12px 14px;font-size:12px;color:#8A5A0E;line-height:1.6;}
+.footer{position:absolute;bottom:0;left:0;right:0;padding:16px 20px 28px;background:linear-gradient(180deg,rgba(244,248,252,0) 0%,var(--bg) 30%);}
+.btn-primary{width:100%;padding:16px;border-radius:16px;background:var(--primary);color:#fff;font-size:15px;font-weight:700;text-align:center;}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="back">‹</div><h1>챌린지 만들기</h1></div>
+  <div class="content">
+    <div class="field"><label>내 닉네임 (이 챌린지에서 사용)</label><input placeholder="예: 짠돌이철수" /></div>
+    <div class="field"><label>챌린지 이름</label><input placeholder="예: 제주도 여행 저축 모임" /></div>
+    <div class="field"><label>목표 금액</label><input placeholder="예: 300,000원" /></div>
+    <div class="field"><label>챌린지 기간</label>
+      <div class="date-row"><input placeholder="시작일" /><input placeholder="종료일" /></div>
+    </div>
+    <div class="preview-coin">💡 하루 최대 10,000원까지 보상받을 수 있어요. 목표 30만원 기준, 평균적으로 약 100일 정도 걸려요.</div>
+  </div>
+  <div class="footer"><button class="btn-primary">챌린지 만들기</button></div>
+</div>
+</body></html>

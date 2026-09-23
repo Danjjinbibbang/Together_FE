@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12·14. 승인상태 뱃지 시스템 v2 — 변경사항 반영</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root{
+  --bg:#F4F8FC; --surface:#FFFFFF; --ink:#1C2733; --muted:#7C8794;
+  --primary:#18A8F1; --primary-dark:#0E74AD; --accent:#FFBE0F;
+  --danger:#E5484D; --border:#E1E8EF; --ai:#7C3AED; --ai-bg:#F1EDFE;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:#E3EEF7; display:flex; justify-content:center; padding:40px 12px;
+}
+.frame{
+  width:375px; min-height:900px; background:var(--bg);
+    overflow:hidden;
+  position:relative; 
+}
+.new-tag{
+  position:absolute; top:60px; right:20px; background:var(--danger); color:#fff;
+  font-size:10px; font-weight:800; padding:3px 8px; border-radius:6px; z-index:6;
+}
+.topbar{padding:28px 20px 6px;position:relative;}
+.topbar h1{font-size:17px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.topbar .sub{font-size:12px; color:var(--muted); margin-top:4px;}
+.content{padding:16px 20px 30px;}
+.stamp{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 12px;
+  border-radius:999px; font-size:12px; font-weight:800; border:1.5px dashed;
+  margin-bottom:10px; margin-right:6px;
+}
+.s1{background:#EFEAE1; border-color:#C7CFD6; color:#52606D;}
+.s2{background:#F1EDFE; border-color:#C9B8F7; color:var(--ai);}
+.s3{background:#FBEDEA; border-color:#F0C6BE; color:var(--danger);}
+.s4{background:#FBF3E4; border-color:var(--accent); color:#8A5A0E;}
+.s5{background:#FBF3E4; border-color:var(--accent); color:#8A5A0E;}
+.s6{background:#FBF3E4; border-color:var(--accent); color:#8A5A0E;}
+.s7{background:#EAF4EE; border-color:var(--primary); color:var(--primary-dark);}
+.s8{background:#FBEDEA; border-color:var(--danger); color:var(--danger);}
+.status-grid{margin-bottom:24px; line-height:2.4;}
+.example-card{
+  background:var(--surface); border-radius:20px; border:1px solid var(--border); padding:18px; margin-bottom:14px;
+}
+.example-card .head{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+.example-card .mission{font-size:14px; font-weight:800; color:var(--ink);}
+.example-card .body-text{font-size:13px; color:var(--ink); line-height:1.6; margin-bottom:14px;}
+.reviewer-tag{
+  display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700;
+  padding:4px 10px; border-radius:999px; margin-bottom:12px;
+}
+.reviewer-ai{background:var(--ai-bg); color:var(--ai);}
+.reviewer-owner{background:#E4F2FC; color:var(--primary-dark);}
+.action-row{display:flex; gap:8px;}
+.action-btn{
+  flex:1; padding:12px; border-radius:12px; text-align:center; font-size:12.5px; font-weight:700;
+}
+.action-btn.primary{background:var(--primary); color:#fff;}
+.action-btn.ghost{background:var(--surface); border:1.5px solid var(--border); color:var(--ink);}
+.annotate{
+  background:#232220; color:#fff; border-radius:14px; padding:12px 14px; font-size:11px; line-height:1.6; opacity:.92;
+}
+.annotate b{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="frame">
+  
+  <div class="new-tag">v2 변경</div>
+  <div class="topbar">
+    <h1>승인 상태 표시 (뱃지 시스템)</h1>
+    <div class="sub">화면 12(미션 완료 결과) · 14(미션 상세)에 공통 적용</div>
+  </div>
+  <div class="content">
+    <div class="status-grid">
+      <span class="stamp s1">📤 제출됨</span>
+      <span class="stamp s2">🤖 AI 승인</span>
+      <span class="stamp s3">🤖 AI 반려</span>
+      <span class="stamp s4">🙋 이의제기중</span>
+      <span class="stamp s5">🔁 재검토 요청</span>
+      <span class="stamp s6">✏️ 재제출됨</span>
+      <span class="stamp s7">👑 방장 승인</span>
+      <span class="stamp s8">👑 방장 반려</span>
+    </div>
+
+    <div class="example-card">
+      <div class="head">
+        <div class="mission">오늘의 운동 인증샷 남기기</div>
+        <span class="stamp s4" style="margin:0;">🙋 이의제기중</span>
+      </div>
+      <div class="reviewer-tag reviewer-ai">🤖 AI가 오탐 처리함 · 화질불량</div>
+      <div class="body-text">
+        AI가 사진 화질 문제로 미션과의 연관성을 확인하지 못했어요. 그대로 재검토를 요청하거나, 사진을 다시 찍어 제출할 수 있어요.
+      </div>
+      <div class="action-row">
+        <div class="action-btn ghost">그대로 재검토 요청</div>
+        <div class="action-btn primary">수정 후 재제출</div>
+      </div>
+    </div>
+
+    <div class="annotate">
+      <b>변경점</b> — 기존엔 승인/반려 2종이었던 상태 표시를 8단계로 세분화하고, <b>AI 판정</b> vs <b>방장 판정</b>을 구분하는 배지를 추가함 (MISSION_LOGS.STATUS 확장 + REVIEWED_BY 필드 신설 반영)
+    </div>
+  </div>
+</div>
+</body>
+</html>

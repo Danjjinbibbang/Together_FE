@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>26. 팀 활동 피드 (신규)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.topbar{display:flex;align-items:center;gap:12px;padding:28px 20px 14px;position:relative;}
+.back{width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);border:1px solid var(--border);}
+.topbar h1{font-size:14.5px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.day-divider{font-size:12px;font-weight:700;color:var(--muted);margin:20px 0 12px;padding:0 20px;}
+.content{padding:0 20px 30px;}
+.feed-item{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:16px;margin-bottom:12px;}
+.feed-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;}
+.feed-head .name{font-size:13px;font-weight:700;color:var(--ink);}
+.feed-head .time{font-size:11px;color:var(--muted);}
+.feed-head .coin{margin-left:auto;background:#FFF8E6;color:#8A5A0E;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;}
+.feed-body{font-size:13px;color:var(--ink);line-height:1.6;margin-bottom:10px;}
+.feed-body.private{color:var(--muted);font-style:italic;}
+.feed-foot{display:flex;gap:14px;font-size:11.5px;color:var(--muted);}
+.feed-foot span{display:flex;align-items:center;gap:4px;}
+.private-lock{font-size:10px;background:#F0F3F6;color:var(--muted);padding:2px 7px;border-radius:6px;margin-left:6px;}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="back">‹</div><h1>제주도 여행 저축 모임 · 활동 피드</h1></div>
+
+  <div class="day-divider">오늘 · 8월 19일</div>
+  <div class="content">
+    <div class="feed-item">
+      <div class="feed-head"><div class="avatar">헬</div><div><div class="name">헬스가는영희</div><div class="time">1시간 전</div></div><span class="coin">🪙 3,400원</span></div>
+      <div class="feed-body">오늘 아침에 30분 러닝 완주! 다들 화이팅 💪</div>
+      <div class="feed-foot"><span>👏 3</span><span>💬 2</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="feed-head"><div class="avatar">저</div><div><div class="name">저축요정민수</div><div class="time">3시간 전</div></div><span class="coin">🪙 800원</span><span class="private-lock">🔒 비공개</span></div>
+      <div class="feed-body private">비공개로 작성된 미션이에요. 완료 여부와 보상 금액만 볼 수 있어요.</div>
+      <div class="feed-foot"><span>👏 1</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="feed-head"><div class="avatar">짠</div><div><div class="name">짠돌이철수 (나)</div><div class="time">9시간 전</div></div><span class="coin">🪙 1,200원</span></div>
+      <div class="feed-body">오늘은 아침에 날씨가 맑아서 기분이 좋았고, 점심에 팀원이 커피를 사줘서 고마웠다...</div>
+      <div class="feed-foot"><span>👏 3</span><span>💬 2</span></div>
+    </div>
+  </div>
+
+  <div class="day-divider">어제 · 8월 18일</div>
+  <div class="content">
+    <div class="feed-item">
+      <div class="feed-head"><div class="avatar">짠</div><div><div class="name">짠돌이철수 (나)</div><div class="time">어제 오전 8:40</div></div><span class="coin">🪙 3,400원</span></div>
+      <div class="feed-body">헬스장 가서 하체 운동 완료! 다리가 후들후들 🦵</div>
+      <div class="feed-foot"><span>👏 5</span><span>💬 3</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

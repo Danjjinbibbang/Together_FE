@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>18. 시스템 알림 (토스트/얼럿)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.content{padding:8px 20px 30px;}
+.section-label{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:10px;}
+.toast{display:flex;align-items:center;gap:10px;background:#232C36;color:#fff;border-radius:14px;padding:14px 16px;font-size:13px;font-weight:600;margin-bottom:24px;}
+.toast.success{background:var(--primary-dark);}
+.toast.error{background:var(--danger);}
+.alert-box{background:var(--surface);border-radius:20px;padding:22px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.08);margin-bottom:24px;}
+.alert-box .icon{font-size:36px;margin-bottom:12px;}
+.alert-box h2{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+.alert-box p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:18px;}
+.alert-btns{display:flex;gap:8px;}
+.alert-btns .b{flex:1;padding:12px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;}
+.alert-btns .cancel{background:#F0F3F6;color:var(--ink);}
+.alert-btns .confirm{background:var(--danger);color:#fff;}
+.banner{background:#FFF8E6;border:1px dashed var(--accent);border-radius:14px;padding:12px 14px;font-size:12px;color:#8A5A0E;line-height:1.6;}
+.topbar{display:flex;align-items:center;gap:12px;padding:28px 20px 4px;position:relative;}
+.back{width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);border:1px solid var(--border);}
+.topbar h1{font-size:16px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="back">‹</div><h1>시스템 알림 컴포넌트</h1></div>
+  <div class="content">
+    <div class="section-label">토스트 메시지</div>
+    <div class="toast success">✓ 미션이 성공적으로 제출됐어요</div>
+    <div class="toast error">⚠ 네트워크 연결을 확인해주세요</div>
+
+    <div class="section-label">확인 얼럿</div>
+    <div class="alert-box">
+      <div class="icon">🚪</div>
+      <h2>챌린지를 탈퇴할까요?</h2>
+      <p>탈퇴하면 이 챌린지의 미션 기록과 알림을 더 이상 받을 수 없어요.</p>
+      <div class="alert-btns"><div class="b cancel">취소</div><div class="b confirm">탈퇴하기</div></div>
+    </div>
+
+    <div class="section-label">인라인 배너</div>
+    <div class="banner">💡 오늘 하루가 얼마 남지 않았어요! 미션을 아직 안 하셨다면 지금 도전해보세요.</div>
+  </div>
+</div>
+</body></html>

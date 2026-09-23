@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>27. 마이페이지 (신규)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.topbar{padding:28px 20px 10px;position:relative;}
+.topbar h1{font-size:18px;font-weight:800;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:6px 20px 110px;}
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;}
+.profile-card .kakao{font-size:11px;color:var(--muted);margin-top:4px;}
+.profile-card .n{font-size:15px;font-weight:800;color:var(--ink);}
+.note{font-size:11.5px;color:var(--muted);background:#F0F3F6;border-radius:12px;padding:10px 12px;margin-bottom:20px;line-height:1.6;}
+.menu-group{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:16px;}
+.menu-item{display:flex;align-items:center;padding:15px 16px;font-size:13.5px;color:var(--ink);font-weight:600;border-bottom:1px solid var(--border);gap:12px;}
+.menu-item:last-child{border-bottom:none;}
+.menu-item .arrow{margin-left:auto;color:var(--muted);}
+.menu-item.danger{color:var(--danger);}
+.bottom-tab{position:absolute;bottom:0;left:0;right:0;height:76px;background:var(--surface);border-top:1px solid var(--border);display:flex;padding-bottom:16px;}
+.tab-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:10px;color:var(--muted);}
+.tab-item.active{color:var(--primary);font-weight:700;}
+.tab-item .ic{font-size:18px;}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><h1>마이페이지</h1></div>
+  <div class="content">
+    <div class="profile-card"><div class="avatar">짠</div><div><div class="n">짠돌이철수</div><div class="kakao">카카오 계정으로 로그인됨</div></div></div>
+    <div class="note">💡 닉네임은 챌린지마다 다르게 설정돼요. 여기서는 앱 전체 계정만 관리할 수 있어요.</div>
+    <div class="menu-group">
+      <div class="menu-item">🔔 알림 설정<span class="arrow">›</span></div>
+      <div class="menu-item">📄 이용약관·개인정보처리방침<span class="arrow">›</span></div>
+      <div class="menu-item">❓ 자주 묻는 질문<span class="arrow">›</span></div>
+    </div>
+    <div class="menu-group">
+      <div class="menu-item">🚪 로그아웃<span class="arrow">›</span></div>
+      <div class="menu-item danger">⚠️ 계정 탈퇴<span class="arrow">›</span></div>
+    </div>
+  </div>
+  <div class="bottom-tab">
+    <div class="tab-item"><div class="ic">🏠</div>홈</div>
+    <div class="tab-item"><div class="ic">📅</div>내기록</div>
+    <div class="tab-item active"><div class="ic">👤</div>마이</div>
+  </div>
+</div>
+</body></html>

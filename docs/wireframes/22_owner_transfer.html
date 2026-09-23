@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>22. 방장 양도</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root{
+  --bg:#F4F8FC; --surface:#FFFFFF; --ink:#1C2733; --muted:#7C8794;
+  --primary:#18A8F1; --primary-dark:#0E74AD; --accent:#FFBE0F;
+  --danger:#E5484D; --border:#E1E8EF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:#E3EEF7; display:flex; justify-content:center; padding:40px 12px;
+}
+.frame{
+  width:375px; min-height:812px; background:var(--bg);
+    overflow:hidden;
+  position:relative; 
+}
+.topbar{display:flex; align-items:center; gap:12px; padding:28px 20px 18px;position:relative;}
+.back{
+  width:32px; height:32px; border-radius:50%; background:var(--surface);
+  display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--ink);
+  border:1px solid var(--border);
+}
+.topbar h1{font-size:14.5px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:4px 20px 140px;}
+.warn{
+  background:#FBEDEA; border:1px solid #F0C6BE; border-radius:16px;
+  padding:16px; margin-bottom:20px; display:flex; gap:12px;
+}
+.warn .icon{font-size:20px;}
+.warn p{font-size:13px; color:#8A362B; line-height:1.6; font-weight:600;}
+.section-label{font-size:13px; font-weight:700; color:var(--muted); margin-bottom:10px;}
+.member{
+  display:flex; align-items:center; gap:12px; padding:14px; border-radius:16px;
+  background:var(--surface); border:1.5px solid var(--border); margin-bottom:10px;
+}
+.member.selected{border-color:var(--primary); background:#F2F8F5;}
+.avatar{
+  width:40px; height:40px; border-radius:50%; background:#E4F2FC;
+  display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--primary-dark);
+}
+.member .info{flex:1;}
+.member .name{font-size:14px; font-weight:700; color:var(--ink);}
+.member .streak{font-size:12px; color:var(--muted); margin-top:2px;}
+.radio{
+  width:20px; height:20px; border-radius:50%; border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+}
+.member.selected .radio{border-color:var(--primary);}
+.radio-dot{width:10px; height:10px; border-radius:50%; background:var(--primary);}
+.crown{font-size:12px; background:var(--accent); color:#fff; padding:2px 8px; border-radius:999px; font-weight:700;}
+.footer{
+  position:absolute; bottom:0; left:0; right:0; padding:16px 20px 28px;
+  background:linear-gradient(180deg, rgba(250,246,240,0) 0%, var(--bg) 30%);
+}
+.btn-primary{
+  width:100%; padding:16px; border-radius:16px; background:var(--danger);
+  color:#fff; font-size:15px; font-weight:700; text-align:center; border:none;
+}
+.btn-sub{font-size:12px; color:var(--muted); text-align:center; margin-top:10px;}
+</style>
+</head>
+<body>
+<div class="frame">
+  
+  <div class="topbar">
+    <div class="back">‹</div>
+    <h1>제주도 여행 저축 모임 · 방장 양도</h1>
+  </div>
+  <div class="content">
+    <div class="warn">
+      <div class="icon">⚠️</div>
+      <p>방장 권한을 넘기면 챌린지 정보 수정, 미션 관리 권한이 모두 새 방장에게 넘어가요. 되돌리려면 새 방장이 다시 양도해야 해요.</p>
+    </div>
+
+    <div class="section-label">새 방장을 선택하세요</div>
+
+    <div class="member">
+      <div class="avatar">나</div>
+      <div class="info">
+        <div class="name">짠돌이철수 <span class="crown">현재 방장</span></div>
+        <div class="streak">7일 연속 미션 성공 🔥</div>
+      </div>
+    </div>
+
+    <div class="member selected">
+      <div class="avatar">영</div>
+      <div class="info">
+        <div class="name">헬스가는영희</div>
+        <div class="streak">12일 연속 미션 성공 🔥</div>
+      </div>
+      <div class="radio"><div class="radio-dot"></div></div>
+    </div>
+
+    <div class="member">
+      <div class="avatar">민</div>
+      <div class="info">
+        <div class="name">저축요정민수</div>
+        <div class="streak">3일 연속 미션 성공</div>
+      </div>
+      <div class="radio"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="btn-primary">헬스가는영희님에게 양도하기</button>
+    <div class="btn-sub">양도 후에는 취소할 수 없어요</div>
+  </div>
+</div>
+</body>
+</html>

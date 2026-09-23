@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>03b. 홈 - FAB 바텀시트 (신규)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.dim{position:absolute;inset:0;background:rgba(15,23,32,.5);z-index:8;}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:28px 20px 4px;position:relative;}
+.greet{font-size:18px;font-weight:800;color:var(--ink);}
+.content{padding:14px 20px 110px;}
+.hero-card{background:linear-gradient(135deg,var(--primary),#0E74AD);border-radius:22px;padding:22px;color:#fff;}
+.hero-card .total{font-size:26px;font-weight:800;}
+.sheet{
+  position:absolute;bottom:0;left:0;right:0;background:var(--surface);
+  border-radius:28px 28px 0 0;padding:12px 20px 32px;z-index:9;box-shadow:0 -10px 30px rgba(0,0,0,.15);
+}
+.grabber{width:40px;height:4px;background:var(--border);border-radius:999px;margin:0 auto 20px;}
+.sheet h2{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:16px;}
+.option{
+  display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;
+  border:1.5px solid var(--border);margin-bottom:12px;
+}
+.option .ic{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.option.create .ic{background:#EAF6FF;}
+.option.join .ic{background:#FFF8E6;}
+.option .t{font-size:14px;font-weight:700;color:var(--ink);}
+.option .d{font-size:11.5px;color:var(--muted);margin-top:3px;}
+.option .arrow{margin-left:auto;color:var(--muted);}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="greet">짠돌이철수님 👋</div></div>
+  <div class="content"><div class="hero-card"><div class="total">126,400원</div></div></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="grabber"></div>
+    <h2>어떻게 시작할까요?</h2>
+    <div class="option create">
+      <div class="ic">✨</div>
+      <div><div class="t">새 챌린지 만들기</div><div class="d">목표를 정하고 친구들을 초대해보세요</div></div>
+      <div class="arrow">›</div>
+    </div>
+    <div class="option join">
+      <div class="ic">🔑</div>
+      <div><div class="t">초대코드로 참여하기</div><div class="d">친구에게 받은 코드를 입력하세요</div></div>
+      <div class="arrow">›</div>
+    </div>
+  </div>
+</div>
+</body></html>

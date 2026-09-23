@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>00. 앱 스플래시 (신규)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:linear-gradient(160deg,var(--primary) 0%,var(--primary-dark) 100%);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.center{text-align:center;}
+.logo{width:88px;height:88px;border-radius:26px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 18px;animation:pop .5s ease;}
+@keyframes pop{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+.center h1{color:#fff;font-size:20px;font-weight:800;letter-spacing:-.3px;}
+.loading-dots{margin-top:36px;display:flex;gap:6px;justify-content:center;}
+.loading-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);}
+</style></head><body>
+<div class="frame">
+  <div class="center">
+    <div class="logo">🐷</div>
+    <h1>같이모으기</h1>
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+</body></html>

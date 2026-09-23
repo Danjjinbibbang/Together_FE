@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>16. 내 기록 캘린더</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;--c-jeju:#18A8F1;--c-workout:#FF7A59;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--bg);overflow:hidden;position:relative;}
+.topbar{display:flex;align-items:center;gap:12px;padding:28px 20px 14px;position:relative;}
+.back{width:32px;height:32px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);border:1px solid var(--border);}
+.topbar h1{font-size:17px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:4px 20px 30px;}
+.month-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.month-nav .m{font-size:15px;font-weight:800;color:var(--ink);}
+.month-nav span{color:var(--muted);font-size:16px;}
+.week-head{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:11px;color:var(--muted);margin-bottom:8px;}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+.day{aspect-ratio:1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;color:var(--ink);background:var(--surface);border:1px solid var(--border);}
+.day.done{background:#F5F8FB;border:1px solid var(--border);font-weight:700;}
+.day.empty{background:transparent;border:none;}
+.dot-row{display:flex;gap:3px;margin-top:3px;}
+.c-dot{width:5px;height:5px;border-radius:50%;}
+.c-jeju{background:var(--c-jeju);}
+.c-workout{background:var(--c-workout);}
+.legend{display:flex;gap:16px;margin-top:12px;padding:0 2px;}
+.legend .item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600;}
+.legend .sw{width:8px;height:8px;border-radius:50%;}
+.legend .edit-pencil{color:var(--muted);font-size:11px;margin-left:2px;}
+.streak-card{margin-top:24px;background:linear-gradient(135deg,var(--accent),#FFD668);border-radius:18px;padding:16px;color:#5C3D00;display:flex;align-items:center;justify-content:space-between;}
+.streak-card .label{font-size:12px;font-weight:700;}
+.streak-card .num{font-size:22px;font-weight:800;}
+.day.selected{outline:2px solid var(--primary-dark);outline-offset:2px;}
+.selected-date-label{font-size:13px;font-weight:800;color:var(--ink);margin:24px 0 12px;}
+.mission-item{
+  display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:14px;margin-bottom:10px;
+}
+.mission-item .m-icon{width:36px;height:36px;border-radius:12px;background:#EAF6FF;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.mission-item .m-info{flex:1;}
+.mission-item .m-info .m-challenge{font-size:11px;color:var(--muted);margin-bottom:3px;}
+.mission-item .m-info .m-title{font-size:13px;font-weight:700;color:var(--ink);}
+.mission-item .m-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-top:5px;display:inline-block;}
+.status-approved{background:#EAF9EF;color:#1F8A4C;}
+.status-ai{background:#F1EDFE;color:#7C3AED;}
+.status-dispute{background:#FFF3D6;color:#8A5A0E;}
+.mission-item .m-reward{font-size:13px;font-weight:800;color:var(--primary-dark);white-space:nowrap;}
+.empty-day{text-align:center;color:var(--muted);font-size:12.5px;padding:30px 0;}
+</style></head><body>
+<div class="frame">
+  <div class="topbar"><div class="back">‹</div><h1>내 기록</h1></div>
+  <div class="content">
+    <div class="month-nav"><span>‹</span><div class="m">2026년 8월</div><span>›</span></div>
+    <div class="week-head"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
+    <div class="grid">
+      <div class="day empty"></div><div class="day empty"></div>
+      <div class="day">1</div>
+      <div class="day done">2<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">3<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day">4</div>
+      <div class="day done">5<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">6<div class="dot-row"><div class="c-dot c-workout"></div></div></div>
+      <div class="day done">7<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">8<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">9<div class="dot-row"><div class="c-dot c-workout"></div></div></div>
+      <div class="day done">10<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day">11</div>
+      <div class="day done">12<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">13<div class="dot-row"><div class="c-dot c-workout"></div></div></div>
+      <div class="day done">14<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">15<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">16<div class="dot-row"><div class="c-dot c-workout"></div></div></div>
+      <div class="day done">17<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done">18<div class="dot-row"><div class="c-dot c-jeju"></div></div></div>
+      <div class="day done selected">19<div class="dot-row"><div class="c-dot c-jeju"></div><div class="c-dot c-workout"></div></div></div>
+    </div>
+
+    <div class="legend">
+      <div class="item"><div class="sw c-jeju"></div>제주도 여행 저축 모임<span class="edit-pencil">✏️</span></div>
+      <div class="item"><div class="sw c-workout"></div>운동 습관 만들기<span class="edit-pencil">✏️</span></div>
+    </div>
+
+    <div class="streak-card"><div class="label">🔥 전체 활동 연속일</div><div class="num">8일째</div></div>
+
+    <div class="selected-date-label">8월 19일 (수) · 내가 한 미션</div>
+
+    <div class="mission-item" style="border-left:4px solid var(--c-jeju);">
+      <div class="m-icon">✍️</div>
+      <div class="m-info">
+        <div class="m-challenge">✈️ 제주도 여행 저축 모임</div>
+        <div class="m-title">오늘 감사한 점 3가지 적기</div>
+        <span class="m-status status-ai">🤖 AI 승인</span>
+      </div>
+      <div class="m-reward">+1,200원</div>
+    </div>
+
+    <div class="mission-item" style="border-left:4px solid var(--c-workout);">
+      <div class="m-icon">📷</div>
+      <div class="m-info">
+        <div class="m-challenge">💪 운동 습관 만들기</div>
+        <div class="m-title">오늘의 운동 인증샷 남기기</div>
+        <span class="m-status status-dispute">🙋 이의제기중</span>
+      </div>
+      <div class="m-reward">+3,400원</div>
+    </div>
+  </div>
+</div>
+</body></html>

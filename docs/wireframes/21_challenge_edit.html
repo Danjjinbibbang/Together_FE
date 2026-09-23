@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>21. 챌린지 정보 수정</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root{
+  --bg:#F4F8FC; --surface:#FFFFFF; --ink:#1C2733; --muted:#7C8794;
+  --primary:#18A8F1; --primary-dark:#0E74AD; --accent:#FFBE0F;
+  --danger:#E5484D; --border:#E1E8EF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:#E3EEF7; display:flex; justify-content:center; padding:40px 12px;
+}
+.frame{
+  width:375px; min-height:812px; background:var(--bg);
+    overflow:hidden;
+  position:relative; 
+}
+.topbar{
+  display:flex; align-items:center; gap:12px; padding:28px 20px 18px;
+position:relative;}
+.back{
+  width:32px; height:32px; border-radius:50%; background:var(--surface);
+  display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--ink);
+  border:1px solid var(--border);
+}
+.topbar h1{font-size:14.5px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:4px 20px 120px;}
+.badge{
+  display:inline-flex; align-items:center; gap:6px; padding:4px 10px;
+  border-radius:999px; background:#E4F2FC; color:var(--primary-dark);
+  font-size:12px; font-weight:700; border:1px dashed var(--accent); margin-bottom:16px;
+}
+.field{margin-bottom:20px;}
+.field label{
+  display:block; font-size:13px; font-weight:700; color:var(--muted); margin-bottom:8px;
+}
+.field input, .field .date-row{
+  width:100%; padding:14px 16px; border-radius:14px; border:1.5px solid var(--border);
+  background:var(--surface); font-size:15px; color:var(--ink); font-weight:600;
+}
+.date-row{display:flex; align-items:center; gap:10px; justify-content:space-between;}
+.date-row span{color:var(--muted); font-weight:500;}
+.helper{font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5;}
+.progress-preview{
+  background:var(--surface); border-radius:16px; padding:16px; border:1px solid var(--border);
+  margin-bottom:24px;
+}
+.progress-preview .row{display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-bottom:8px;}
+.bar{height:8px; background:#E4F2FC; border-radius:999px; overflow:hidden;}
+.bar-fill{height:100%; width:42%; background:var(--primary); border-radius:999px;}
+.footer{
+  position:absolute; bottom:0; left:0; right:0; padding:16px 20px 28px;
+  background:linear-gradient(180deg, rgba(250,246,240,0) 0%, var(--bg) 30%);
+}
+.btn-primary{
+  width:100%; padding:16px; border-radius:16px; background:var(--primary);
+  color:#fff; font-size:15px; font-weight:700; text-align:center; border:none;
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  
+  <div class="topbar">
+    <div class="back">‹</div>
+    <h1>제주도 여행 저축 모임 · 정보 수정</h1>
+  </div>
+  <div class="content">
+    <div class="badge">🔒 방장만 수정할 수 있어요</div>
+
+    <div class="progress-preview">
+      <div class="row"><span>현재 진행률</span><span>126,400원 / 300,000원</span></div>
+      <div class="bar"><div class="bar-fill"></div></div>
+    </div>
+
+    <div class="field">
+      <label>챌린지 이름</label>
+      <input type="text" value="제주도 여행 저축 모임" />
+    </div>
+
+    <div class="field">
+      <label>목표 금액</label>
+      <input type="text" value="300,000원" />
+      <div class="helper">목표 금액을 낮추면 진행률이 자동으로 재계산돼요.</div>
+    </div>
+
+    <div class="field">
+      <label>챌린지 기간</label>
+      <div class="date-row">
+        <span>2026.09.01</span>
+        <span>→</span>
+        <span>2026.12.31</span>
+      </div>
+      <div class="helper">종료일을 이미 지난 날짜로 바꾸면 챌린지가 즉시 마감돼요.</div>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="btn-primary">저장하기</button>
+  </div>
+</div>
+</body>
+</html>

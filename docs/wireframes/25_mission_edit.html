@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>25. 미션 수정</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root{
+  --bg:#F4F8FC; --surface:#FFFFFF; --ink:#1C2733; --muted:#7C8794;
+  --primary:#18A8F1; --primary-dark:#0E74AD; --accent:#FFBE0F;
+  --danger:#E5484D; --border:#E1E8EF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:#E3EEF7; display:flex; justify-content:center; padding:40px 12px;
+}
+.frame{
+  width:375px; min-height:812px; background:var(--bg);
+    overflow:hidden;
+  position:relative; 
+}
+.topbar{display:flex; align-items:center; gap:12px; padding:28px 20px 18px;position:relative;}
+.back{
+  width:32px; height:32px; border-radius:50%; background:var(--surface);
+  display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--ink);
+  border:1px solid var(--border);
+}
+.topbar h1{font-size:14.5px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.content{padding:4px 20px 200px;}
+.field{margin-bottom:18px;}
+.field label{display:block; font-size:13px; font-weight:700; color:var(--muted); margin-bottom:8px;}
+.field input{
+  width:100%; padding:14px 16px; border-radius:14px; border:1.5px solid var(--border);
+  background:var(--surface); font-size:14px; color:var(--ink); font-weight:600;
+}
+.switch-row{
+  display:flex; align-items:center; justify-content:space-between; background:var(--surface);
+  border:1.5px solid var(--border); border-radius:16px; padding:16px; margin-bottom:10px;
+}
+.switch-row .txt .t{font-size:14px; font-weight:700; color:var(--ink);}
+.switch-row .txt .d{font-size:12px; color:var(--muted); margin-top:4px; line-height:1.5;}
+.toggle{
+  width:44px; height:26px; border-radius:999px; background:var(--primary); position:relative; flex-shrink:0;
+}
+.toggle .dot{width:20px; height:20px; border-radius:50%; background:#fff; position:absolute; top:3px; right:3px;}
+.note{
+  background:#FBF3E4; border:1px dashed var(--accent); border-radius:14px; padding:12px 14px;
+  font-size:12px; color:var(--primary-dark); line-height:1.6; margin-bottom:24px;
+}
+.danger-zone{border-top:1px solid var(--border); padding-top:20px;}
+.danger-zone .label{font-size:12px; font-weight:700; color:var(--muted); margin-bottom:10px;}
+.delete-btn{
+  width:100%; padding:14px; border-radius:14px; border:1.5px solid #F0C6BE; color:var(--danger);
+  font-size:14px; font-weight:700; text-align:center; background:#FBEDEA;
+}
+.delete-helper{font-size:11px; color:var(--muted); margin-top:8px; line-height:1.6; text-align:center;}
+.footer{
+  position:absolute; bottom:0; left:0; right:0; padding:16px 20px 28px;
+  background:linear-gradient(180deg, rgba(250,246,240,0) 0%, var(--bg) 30%);
+}
+.btn-primary{
+  width:100%; padding:16px; border-radius:16px; background:var(--primary);
+  color:#fff; font-size:15px; font-weight:700; text-align:center; border:none;
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  
+  <div class="topbar">
+    <div class="back">‹</div>
+    <h1>오늘 감사한 점 3가지 적기 · 수정</h1>
+  </div>
+  <div class="content">
+    <div class="field">
+      <label>미션 제목</label>
+      <input type="text" value="오늘 감사한 점 3가지 적기" />
+    </div>
+    <div class="field">
+      <label>보상 금액 범위</label>
+      <input type="text" value="100원 ~ 2,000원" />
+    </div>
+    <div class="field">
+      <label>최소 글자 수</label>
+      <input type="text" value="30" />
+    </div>
+
+    <div class="switch-row">
+      <div class="txt">
+        <div class="t">이 미션 활성화</div>
+        <div class="d">꺼두면 오늘의 미션 뽑기에서 제외돼요</div>
+      </div>
+      <div class="toggle"><div class="dot"></div></div>
+    </div>
+
+    <div class="note">
+      💡 이미 이 미션으로 제출된 인증 기록은 비활성화해도 그대로 남아요. 과거 기록·보상 내역엔 영향이 없어요.
+    </div>
+
+    <div class="danger-zone">
+      <div class="label">위험 구역</div>
+      <button class="delete-btn">이 미션 완전히 삭제하기</button>
+      <div class="delete-helper">아직 아무도 인증하지 않은 미션만 삭제할 수 있어요.<br/>이미 인증 기록이 있다면 비활성화만 가능해요.</div>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="btn-primary">저장하기</button>
+  </div>
+</div>
+</body>
+</html>

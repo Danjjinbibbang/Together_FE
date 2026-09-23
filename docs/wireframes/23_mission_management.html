@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>23. 미션 관리 목록</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+:root{
+  --bg:#F4F8FC; --surface:#FFFFFF; --ink:#1C2733; --muted:#7C8794;
+  --primary:#18A8F1; --primary-dark:#0E74AD; --accent:#FFBE0F;
+  --danger:#E5484D; --border:#E1E8EF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  background:#E3EEF7; display:flex; justify-content:center; padding:40px 12px;
+}
+.frame{
+  width:375px; min-height:812px; background:var(--bg);
+    overflow:hidden;
+  position:relative; 
+}
+.topbar{display:flex; align-items:center; justify-content:space-between; padding:28px 20px 18px;position:relative;}
+.topbar-left{display:flex; align-items:center; gap:12px;}
+.back{
+  width:32px; height:32px; border-radius:50%; background:var(--surface);
+  display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--ink);
+  border:1px solid var(--border);
+}
+.topbar h1{font-size:14.5px;font-weight:700;position:absolute;left:56px;right:56px;text-align:center;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.add-btn{
+  width:32px; height:32px; border-radius:10px; background:var(--primary);
+  color:#fff; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700;
+}
+.content{padding:4px 20px 30px;}
+.stat-row{display:flex; gap:10px; margin-bottom:18px;}
+.stat{
+  flex:1; background:var(--surface); border-radius:14px; padding:12px; border:1px solid var(--border);
+}
+.stat .num{font-size:18px; font-weight:800; color:var(--primary-dark);}
+.stat .label{font-size:11px; color:var(--muted); margin-top:2px;}
+.card{
+  background:var(--surface); border-radius:18px; padding:16px; margin-bottom:12px; border:1px solid var(--border);
+}
+.card.inactive{opacity:.5;}
+.card-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;}
+.card-title{font-size:15px; font-weight:700; color:var(--ink);}
+.source-badge{
+  font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; margin-top:6px; display:inline-block;
+}
+.source-owner{background:#E4F2FC; color:var(--primary-dark);}
+.source-ai{background:#F1EDFE; color:#7C3AED;}
+.toggle{
+  width:44px; height:26px; border-radius:999px; background:var(--primary); position:relative; flex-shrink:0;
+}
+.toggle.off{background:#D9D2C4;}
+.toggle .dot{
+  width:20px; height:20px; border-radius:50%; background:#fff; position:absolute; top:3px; right:3px;
+}
+.toggle.off .dot{right:auto; left:3px;}
+.card-meta{display:flex; gap:14px; font-size:12px; color:var(--muted);}
+.coin{
+  display:inline-flex; align-items:center; gap:4px; font-weight:700; color:var(--accent);
+}
+.fab{
+  position:absolute; bottom:28px; right:24px; width:56px; height:56px; border-radius:50%;
+  background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:26px; font-weight:700; box-shadow:0 10px 20px rgba(31,111,92,.35);
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="back">‹</div>
+      <h1>제주도 여행 저축 모임 · 미션 관리</h1>
+    </div>
+    <div class="add-btn">+</div>
+  </div>
+  <div class="content">
+    <div class="stat-row">
+      <div class="stat"><div class="num">6</div><div class="label">활성 미션</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">비활성 미션</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">오늘 감사한 점 3가지 적기</div>
+          <span class="source-badge source-owner">👤 방장 생성</span>
+        </div>
+        <div class="toggle"><div class="dot"></div></div>
+      </div>
+      <div class="card-meta">
+        <span class="coin">🪙 100~2,000원</span>
+        <span>텍스트 · 최소 30자</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <div class="card-title">오늘의 운동 인증샷 남기기</div>
+          <span class="source-badge source-ai">✨ AI 생성</span>
+        </div>
+        <div class="toggle"><div class="dot"></div></div>
+      </div>
+      <div class="card-meta">
+        <span class="coin">🪙 500~10,000원</span>
+        <span>사진</span>
+      </div>
+    </div>
+
+    <div class="card inactive">
+      <div class="card-top">
+        <div>
+          <div class="card-title">오늘 기분 이모지 + 이유 한 줄</div>
+          <span class="source-badge source-owner">👤 방장 생성</span>
+        </div>
+        <div class="toggle off"><div class="dot"></div></div>
+      </div>
+      <div class="card-meta">
+        <span class="coin">🪙 100~1,000원</span>
+        <span>텍스트 · 최소 5자</span>
+      </div>
+    </div>
+  </div>
+  <div class="fab">+</div>
+</div>
+</body>
+</html>

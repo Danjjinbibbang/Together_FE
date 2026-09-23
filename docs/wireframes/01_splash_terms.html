@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>01. 스플래시/약관동의</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" /><style>
+:root{--bg:#F4F8FC;--surface:#FFFFFF;--ink:#1C2733;--muted:#7C8794;--primary:#18A8F1;--primary-dark:#0E74AD;--accent:#FFBE0F;--danger:#E5484D;--border:#E1E8EF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#fff;display:flex;justify-content:center;}
+.frame{width:375px;min-height:812px;background:var(--primary);overflow:hidden;position:relative;display:flex;flex-direction:column;}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center;}
+.logo{width:88px;height:88px;border-radius:26px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:24px;}
+.hero h1{color:#fff;font-size:24px;font-weight:800;margin-bottom:10px;}
+.hero p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.6;}
+.sheet{background:var(--surface);border-radius:28px 28px 0 0;padding:28px 24px 32px;}
+.terms-title{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:14px;}
+.notice{background:#FFF8E6;border:1px dashed var(--accent);border-radius:14px;padding:14px;font-size:12.5px;color:#8A5A0E;line-height:1.6;margin-bottom:18px;}
+.check-row{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);}
+.check{width:20px;height:20px;border-radius:6px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+.check-row span{font-size:13px;color:var(--ink);font-weight:600;}
+.check-row .link{color:var(--muted);margin-left:auto;font-size:12px;}
+.btn-primary{width:100%;margin-top:20px;padding:16px;border-radius:16px;background:var(--primary);color:#fff;font-size:15px;font-weight:700;text-align:center;}
+</style></head><body>
+<div class="frame">
+  <div class="hero">
+    <div class="logo">🐷</div>
+    <h1>같이모으기</h1>
+    <p>친구들과 함께 저축 목표를 세우고<br/>매일 미션으로 가상 머니를 모아보세요</p>
+  </div>
+  <div class="sheet">
+    <div class="terms-title">시작하기 전에 확인해주세요</div>
+    <div class="notice">💡 여기서 모이는 돈은 실제 화폐·계좌와 무관한 <b>가상 머니</b>예요. 실제 송금·출금 기능은 제공하지 않아요.</div>
+    <div class="check-row"><div class="check">✓</div><span>서비스 이용약관 동의 (필수)</span><span class="link">보기 ›</span></div>
+    <div class="check-row"><div class="check">✓</div><span>개인정보 처리방침 동의 (필수)</span><span class="link">보기 ›</span></div>
+    <button class="btn-primary">동의하고 시작하기</button>
+  </div>
+</div>
+</body></html>
